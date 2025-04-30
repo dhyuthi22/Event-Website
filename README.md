@@ -27,7 +27,7 @@ To view or modify the website locally, follow these steps:
 
 1. **Clone or Download** this repository:
    ```bash
-   git clone https://github.com/your-username/DCheruvu_WEB101.git
+   git clone https://github.com/dhyuthi22/Event-Website.git
    ```
    Or download the ZIP and extract it.
 
