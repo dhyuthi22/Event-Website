@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #fff0f5;
+        }
+
+        .navbar {
+            background-color: #f08080;
+            padding: 10px 20px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px;
+            gap: 20px;
+        }
+
+        .form-container, .info-container {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .form-container h2 {
+            color: #d87093;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: #f08080;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .info-container h3 {
+            color: #d87093;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+        }
+
+        .info-item b {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#schedule">Events</a></li>
+            <li><a href="index.html#links">Helpful Links</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="contact-section">
+        <div class="form-container">
+            <h2>Tell Us About Your Wedding</h2>
+            <form>
+                <div class="form-group">
+                    <label>First Name *</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Last Name *</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Email *</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Phone *</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Contact Method *</label>
+                    <select required>
+                        <option value="">Select</option>
+                        <option>Email</option>
+                        <option>Phone</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Your Message</label>
+                    <textarea rows="5"></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="info-container">
+            <h3>Visit or Contact Us</h3>
+            <div class="info-item">
+                <b>Phone</b>
+                📞 Toll Free: 801-123-4567<br>
+                📍 Local: 213-333-6789
+            </div>
+            <div class="info-item">
+                <b>Email</b>
+                💌 loveisintheair@website.com
+            </div>
+            <div class="info-item">
+                <b>Address</b>
+                🌍 123 Garden Rd, Celebration City, TX 90210
+            </div>
+            <div class="info-item">
+                <b>Hours</b>
+                🕒 Mon–Fri: 9:00 AM – 5:00 PM
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

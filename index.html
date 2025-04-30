@@ -2,47 +2,22 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="styles.css">
-        <!-- head
-
-        Purpose:
-        - Title used here shows up in the browser tab
-        - Link to the favicon (small image that appears in the browser tab)
-        - Link to the CSS file (used to style the webpage)
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 2 (STRETCH FEATURE) (favicon)
-        - [ ] Any time after
-        -->
         <title>Wedding Website</title>
         <link rel="icon" href="\VSCode Edu\img\icon.ico">
     </head>
     
     <body>       
     
-        <!-- navbar [PLACEHOLDER] [ADDED IN UNIT 4] -->
         <div class="navbar">
             <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#schedule">Events</a></li>
             <li><a href="#links">Helpful Links</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <button id="theme-button">Toggle Dark Mode</button>
             </ul>
         </div> 
-
-        <!-- headings
-
-        Purpose:
-        - Main header section of the webpage
-        - Contains the title, subtitle, image, and key buttons for the webpage
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 3 (REQUIRED FEATURE) 
-        - [ ] Project 4 (REQUIRED FEATURE) 
-        - [ ] Any time after
-        -->
 
         <header id = "home" class="header-container">
             <div class="header-item">
@@ -51,24 +26,11 @@
             <div class = "header-item">
                 <h1>Love Is In The Air</h1>
                 <h2>Love, Laughter, Forever</h2>
-                <button type="button" class="header-button">📝Signup</button>
-                <button type="button" class="header-button">📅View Event Schedule</button>
+                <button id="sigunp-button" type="button" class="header-button">📝Signup</button>
+                <button id="schedule-button" type="button" class="header-button">📅View Event Schedule</button>
             </div>
         </header>
 
-        
-        <!-- about
-
-        Purpose:
-        - Section for general info about the event
-        - Contains a video, description, and key points about the event
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 2 (STRETCH FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
         <h2 id="about">About the Event</h2>
         <iframe src="https://www.youtube.com/embed/RQorrnJIc2Q?si=vJNMV3sCoZ57Teun" 
         title="YouTube video player" 
@@ -92,46 +54,30 @@
             <li> <b>Music & Dancing:</b> <i>Get ready to hit the dance floor with live music and a DJ playing your favorite tunes all night long!</i></li>
         </ul>
 
-        <!-- schedule
-
-        Purpose:
-        - Section for specific info about the event's schedule
-        - Contains images and descriptions of each activity
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
         <h2 id="schedule">Event Schedule</h2>
         <div class="event-container">
             <div class = "event-item">
-                <img alt="" src="\VSCode Edu\img\2.jpg"/>
+                <img alt="" src="img\2.jpg"/>
             <h3>💍Engagement Ceremony</h3>
             <p>A heartfelt gathering to celebrate the couple’s official commitment.</p>
             </div>
             <div class = "event-item">
-                <img alt="Image description" src="\VSCode Edu\img\1.jpg"/>
+                <img alt="Image description" src="img\1.jpg"/>
                 <h3>💒Wedding Ceremony</h3>
                 <p>The moment where the couple exchanges vows and begins their forever.</p>
             </div>
             <div class="event-item">
-                <img alt="Image description" src="\VSCode Edu\img\3.jpg"/>
+                <img alt="Image description" src="img\3.jpg"/>
                 <h3>🎉Reception Party</h3>
                 <p>An evening of dining, dancing, and celebrating love with family and friends.</p>
             </div>
         </div>
-        <!-- rsvp [PLACEHOLDER] [ADDED IN UNIT 6] -->
-        <!-- links
 
-        Purpose:
-        - Links to other resources related to the event
-
-        When To Modify:
-        - [ ] Project 2 (STRETCH FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
+        <div id="countdown-container">
+            <h2>⏳ Countdown to the Big Day</h2>
+            <p id="countdown-text">Loading...</p>
+        </div>          
+ 
         <div id="rsvp">
             <h2>RSVP</h2>
             <div class="rsvp-container">
@@ -148,7 +94,6 @@
                 </div>
             </div>
         
-            <!--- Sign RSVP Form --->
             <div class="form-container">
                 <form id="rsvp-form" title="rsvp-form">
                     <label for="name">Name:</label>
@@ -161,16 +106,6 @@
                 </form>
             </div>      
         </div>
-
-                <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] 
-        Purpose:
-        - Modal that appears when a user successfully signs up for the event
-        - Contains a personalized message and image
-
-        When To Modify:
-        - [ ] Project 9 (REQUIRED FEATURE)
-        - [ ] Project 9 (STRETCH FEATURE) 
-        - [ ] Any time after -->
 
         <div id="success-modal" class="modal">
             <div class="modal-container">
@@ -185,7 +120,6 @@
         </div>
 
         <h2 id="links">Tips & Guides</h2>
-        <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
         <a class="block" href="https://www.codepath.org">
             <article>
                 <h3><a href="https://www.fionakellyphotography.com/wedding-planning-tips-from-real-couples-how-to-stay-organised-and-stress-free/" target="_blank">Wedding Planning Tips</a></h3>
@@ -204,14 +138,34 @@
                 <p class="description">Discover reviews & recommendations for local hotels, restaurants, and attractions</p>
             </article>
         </a>
+
+        <h2 id="gallery">Gallery</h2>
+        <div class="carousel-container">
+            <button class="carousel-button prev">&#10094;</button>
+            <div class="carousel-track-container">
+                <ul class="carousel-track" style="list-style-type: none;">
+                    <li class="carousel-slide"><img src="img/g1.jpg" alt="Image 1"></li>
+                    <li class="carousel-slide"><img src="img/g2.jpg" alt="Image 2"></li>
+                    <li class="carousel-slide"><img src="img/g3.jpg" alt="Image 3"></li>
+                    <li class="carousel-slide"><img src="img/g4.jpg" alt="Image 4"></li>
+                    <li class="carousel-slide"><img src="img/g5.jpg" alt="Image 5"></li>
+                    <li class="carousel-slide"><img src="img/g6.jpg" alt="Image 6"></li>
+                    <li class="carousel-slide"><img src="img/g7.jpg" alt="Image 7"></li>
+                    <li class="carousel-slide"><img src="img/g8.jpg" alt="Image 8"></li>
+                    <li class="carousel-slide"><img src="img/g9.jpg" alt="Image 9"></li>
+                    <li class="carousel-slide"><img src="img/g10.jpg" alt="Image 10"></li>
+                    <li class="carousel-slide"><img src="img/g11.jpg" alt="Image 11"></li>
+                    <li class="carousel-slide"><img src="img/g12.jpg" alt="Image 12"></li>
+                    <li class="carousel-slide"><img src="img/g13.jpg" alt="Image 13"></li>
+                </ul>
+            </div>
+            <button class="carousel-button next">&#10095;</button>
+        </div>
             
-        <!-- footer [PLACEHOLDER] [ADDED IN UNIT 3] -->
-         <!-- Footer Section -->
         <div class="footer">
-            <a href="/contact-us" target="_blank">Contact us |</a>
+            <a href="contact.html" target="_blank">Contact us |</a>
             <a href="/privacy-policy" target="_blank">Privacy policy</a>
         </div>
-        <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
         <script src="index.js"></script>
     </body>
 </html>

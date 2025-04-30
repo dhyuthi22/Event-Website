@@ -1,82 +1,32 @@
-/*** You will not need this file until Unit 5 ***/
-/*** Dark Mode ***
-  
-  Purpose:
-  - Use this starter code to add a dark mode feature to your website.
-
-  When To Modify:
-  - [ ] Project 5 (REQUIRED FEATURE) 
-  - [ ] Any time after
-***/
-
-// Step 1: Select the theme button
+// Dark Mode Toggle
 let themeButton = document.getElementById("theme-button");
-// Step 2: Write the callback function
 const toggleDarkMode = () => {
   document.body.classList.toggle("dark-mode");
-    // This section will run whenever the button is clicked
-}
-
-// Step 3: Register a 'click' event listener for the theme button,
-//             and tell it to use toggleDarkMode as its callback function
+};
 themeButton.addEventListener('click', toggleDarkMode);
 
-/*** Form Handling [PLACEHOLDER] [ADDED IN UNIT 6] ***
-Purpose:
-  - When the user submits the RSVP form, the name and state they 
-    entered should be added to the list of participants.
-
-  When To Modify:
-  - [ ] Project 6 (REQUIRED FEATURE)
-  - [ ] Project 6 (STRETCH FEATURE) 
-  - [ ] Project 7 (REQUIRED FEATURE)
-  - [ ] Project 9 (REQUIRED FEATURE)
-  - [ ] Any time between / after
-***/
-
-// Step 1: Add your query for the submit RSVP button here
+// RSVP Handling
 const submitButton = document.getElementById('rsvp-button');
-let count = 3; 
+let count = 3;
 
 const addParticipant = (person) => {
-    // Step 2: Write your code to manipulate the DOM here
+  const participantList = document.querySelector('.rsvp-participants ul');
+  const newParticipant = document.createElement('li');
+  newParticipant.textContent = `🌹 ${person.name} - ${person.side}`;
+  participantList.appendChild(newParticipant);
 
-    const participantList = document.querySelector('.rsvp-participants ul');
-    const newParticipant = document.createElement('li');
-    newParticipant.textContent = `🌹 ${person.name} - ${person.side}`;
-    participantList.appendChild(newParticipant);
-  
-    const oldCount = document.getElementById('rsvp-count');
-    oldCount.remove();
-  
-    count++;
-    const newCount = document.createElement('p');
-    newCount.id = "rsvp-count";
-    newCount.textContent = `🔔 ${count} guests are ready to celebrate with us!`;
-  
-    document.querySelector('.rsvp-participants').appendChild(newCount);
+  const oldCount = document.getElementById('rsvp-count');
+  oldCount.remove();
+
+  count++;
+  const newCount = document.createElement('p');
+  newCount.id = "rsvp-count";
+  newCount.textContent = `🔔 ${count} guests are ready to celebrate with us!`;
+  document.querySelector('.rsvp-participants').appendChild(newCount);
 };
 
-// Step 3: Add a click event listener to the submit RSVP button here
-
-
-/*** Form Validation [PLACEHOLDER] [ADDED IN UNIT 7] ***
-Purpose:
-- Prevents invalid form submissions from being added to the list of participants.
-
-When To Modify:
-- [ ] Project 7 (REQUIRED FEATURE)
-- [ ] Project 7 (STRETCH FEATURE)
-- [ ] Project 9 (REQUIRED FEATURE)
-- [ ] Any time between / after
-***/
-
-// Step 1: We actually don't need to select the form button again -- we already did it in the RSVP code above.
-
-// Step 2: Write the callback function
 const validateForm = (event) => {
   event.preventDefault();
-
   let containsErrors = false;
   const rsvpInputs = document.getElementById("rsvp-form").elements;
 
@@ -86,10 +36,8 @@ const validateForm = (event) => {
     side: rsvpInputs[2].value.trim()
   };
 
-  // Loop through all inputs
   for (let i = 0; i < rsvpInputs.length; i++) {
     const input = rsvpInputs[i];
-
     if (input && input.tagName === "INPUT") {
       const value = input.value.trim();
       input.classList.remove("error");
@@ -112,26 +60,15 @@ const validateForm = (event) => {
     }
   }
 
-  // If no errors, call addParticipant() and clear fields
-if (!containsErrors) {
-  addParticipant(person);
-  toggleModal(person);
+  if (!containsErrors) {
+    addParticipant(person);
+    toggleModal(person);
   }
 };
 
-// Add event listener for form submission
 submitButton.addEventListener('click', validateForm);
 
-/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
-/*** Success Modal [ADDED IN UNIT 9] 
-  Purpose:
-  - Use this starter code to add a pop-up modal to your website.
-
-  When To Modify:
-  - [x] Project 9 (REQUIRED FEATURE)
-  - [x] Project 9 (STRETCH FEATURE)
-  - [ ] Any time after
-***/
+// Modal Handling
 const toggleModal = (person) => {
   const modal = document.getElementById("success-modal");
   const modalText = document.getElementById("modal-text");
@@ -140,7 +77,7 @@ const toggleModal = (person) => {
   modal.style.display = "flex";
 
   modalText.textContent = `You’re the sprinkles on our wedding cake 🍰✨, ${person.name}. Thanks for saying yes to the invite! 🎉 We can’t wait to celebrate this special day with you. Your presence will make it all the more magical. Get ready for a day full of love, laughter, and unforgettable memories! 💕🎶`;
-  
+
   let scale = 1;
   let growing = true;
 
@@ -161,21 +98,18 @@ const toggleModal = (person) => {
     modal.style.display = "none";
     clearInterval(window.modalAnimationInterval);
     modalImage.style.transform = "scale(1)";
-  }, 5000);  
+  }, 5000);
 };
-
 
 const closeModal = () => {
   const modal = document.getElementById("success-modal");
   modal.style.display = "none";
 
-  // Reset image scale if still animating
   const modalImage = document.getElementById("modal-image");
   if (modalImage) {
     modalImage.style.transform = "scale(1)";
   }
 
-  // Stop animation if running
   if (window.modalAnimationInterval) {
     clearInterval(window.modalAnimationInterval);
     window.modalAnimationInterval = null;
@@ -184,3 +118,77 @@ const closeModal = () => {
 
 const closeButton = document.getElementById("close-modal-button");
 closeButton.addEventListener("click", closeModal);
+
+// Carousel Logic
+const track = document.querySelector('.carousel-track');
+const prevBtn = document.querySelector('.carousel-button.prev');
+const nextBtn = document.querySelector('.carousel-button.next');
+if (track && prevBtn && nextBtn) {
+  const slides = Array.from(track.children);
+  const slideWidth = slides[0].getBoundingClientRect().width;
+
+  slides.forEach((slide, index) => {
+    slide.style.left = slideWidth * index + 'px';
+  });
+
+  let currentSlide = 0;
+
+  function updateSlidePosition() {
+    track.style.transform = 'translateX(-' + (slideWidth * currentSlide) + 'px)';
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (currentSlide < slides.length - 2) {
+      currentSlide += 2;
+      updateSlidePosition();
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentSlide > 0) {
+      currentSlide -= 2;
+      updateSlidePosition();
+    }
+  });
+}
+
+// Countdown
+const weddingDate = new Date("2025-07-01T00:00:00");
+const countdownText = document.getElementById("countdown-text");
+
+const updateCountdown = () => {
+  const now = new Date();
+  const diff = weddingDate - now;
+
+  if (diff <= 0) {
+    countdownText.textContent = "🎉 It's Wedding Day! Let's Celebrate!";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  countdownText.textContent = `💍 ${days}d ${hours}h ${minutes}m ${seconds}s to go!`;
+};
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// Scroll buttons
+document.addEventListener("DOMContentLoaded", () => {
+  const signupBtn = document.getElementById("sigunp-button");
+  if (signupBtn) {
+    signupBtn.addEventListener("click", () => {
+      document.getElementById("rsvp").scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
+  const scheduleBtn = document.getElementById("schedule-button");
+  if (scheduleBtn) {
+    scheduleBtn.addEventListener("click", () => {
+      document.getElementById("schedule").scrollIntoView({ behavior: "smooth" });
+    });
+  }
+});
