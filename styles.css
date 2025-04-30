@@ -1,0 +1,530 @@
+/*** You will not need this file until Unit 3 ***/
+/*** VSCodeEDU preview fix 
+
+  Purpose:
+  - Fix VSCodeEDU issue that causes a white border to show around
+    the preview window
+
+  When To Modify:
+  - If you change the background color of your webpage, you may need to update this rule too.
+***/
+html {
+    background-color: var(--bg-color);
+    scroll-padding-top: 50px; /* Adjust to match height of your navbar */
+  }
+
+
+/*** body ***
+  
+  Purpose:
+  - Add style rules for the body of your webpage
+  - This is useful if you want a rule to apply to EVERYTHING on your page
+    - (Tip: You can always override these rules later in the stylesheet)
+
+  When To Modify:
+  - [ ] Project 3 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+body {
+    /* Add a background color or image */
+    background-color: var(--bg-color); /* see bottom of file for color variables */
+
+    /* Customize the default size, color, and font for text*/
+    font-size: 16px;
+    color: var(--text-color);
+    font-family: Tahoma, sans-serif; /* This tells the browser: "Try to use `Tahoma`, and if you can't find it, use any sans-serif font." */
+
+    /* Put space around the edges of the webpage */
+    margin: 0;
+    padding-top: 0;
+}
+
+/*** Text ***
+  
+  Purpose: 
+  - Add style rules for headings (h1-6),
+    paragraphs (p), links (a), and buttons
+
+  When To Modify:
+  - [X] Project 3 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+h1 {
+  background-color: #5D3A9B;
+  color: white;
+  font-family: Tahoma;
+  font-size: 36px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-family: Tahoma;
+  color: black;
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: Tahoma;
+  color: black;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 16px;
+  font-family: Tahoma;
+  color: black;
+}
+
+ul{
+  font-size: 14px;
+  font-family: Tahoma;
+  color: black;
+}
+
+p {
+  font-size: 14px;
+  color: black;
+  margin-bottom: 15px;
+  font-family: Tahoma;
+  margin-top: 0; 
+}
+
+a{
+  text-decoration: none;
+  color: #0073e6;
+  font-weight: bold;
+}
+
+a:link {
+  color: #0073e6;
+}
+
+a:visited {
+  color: #5a5a5a;
+}
+
+a:hover {
+  color: #ff5733;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #b30000;
+}
+
+article h3 {
+  font-size: 20px;
+  color: #222;
+}
+
+/*** header ***
+  
+  Purpose:
+  - Add style rules for your website's header section
+
+  When To Modify:
+  - [X] Project 3 (REQUIRED FEATURE) 
+  - [ ] Project 4 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+.header-container { /* Example A: This styles elements with class="header" */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 20px;
+  margin-top: 30px;
+  justify-content: center;
+  background-color: pink;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.header-item:nth-of-type(1) {
+  text-align: center;
+  align-items: center;
+  width: 35%;
+}
+
+.header-item:nth-of-type(2) {
+  text-align: center;
+  color: white;
+  width: 40%;
+}
+
+#header-img {
+  display:flex;
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  justify-content: flex-start;
+}
+
+.header-button {
+  display: inline-block;
+  background-color: lightcyan;
+  color: #4B2E83;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid #4B2E83;
+}
+
+.header-button:hover {
+  background-color: #ffcc00;
+  color: white;
+}
+
+/*** footer ***
+  
+  Purpose:
+  - Add style rules for your website's footer section
+
+  When To Modify:
+  - [ ] Project 3 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+.footer { /* Example B: This styles elements with class="footer" */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: purple;
+  padding: 0 0;
+  margin-top: 25px
+}
+
+.footer a {
+  font-size: 12px;
+  text-decoration: none;
+  color: white;
+  font-weight:lighter;
+}
+
+.footer a:hover{
+  color: grey;
+}
+
+/*** Navbar [PLACEHOLDER] [ADDED IN UNIT 4] ***/
+.navbar ul {
+  display: flex;
+  align-items: center;
+  z-index: 1000; /* Ensures the navbar is on top of other elements */
+  list-style-type: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 100%;
+  background-color: palevioletred;
+  margin:0;
+}
+
+.navbar ul li {
+  float: left;
+  margin: 10px;
+}
+
+.navbar ul li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  text-align: grey;
+}
+
+.navbar ul li a:hover {
+  color: silver;
+}
+
+.navbar ul #theme-button {
+  border-radius: 8px;
+  padding: 5px;
+}
+
+/*** About Section ***
+  
+  Purpose:
+  - Add style rules for your website's About section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** Schedule Section ***
+  
+  Purpose:
+  - Add style rules for your website's Schedule section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** Links Section ***
+  
+  Purpose:
+  - Add style rules for your website's Links section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** RSVP [PLACEHOLDER] [ADDED IN UNIT 6] ***
+Purpose:
+- Add style rules for your website's RSVP form
+
+When To Modify:
+- [ ] Project 6 (REQUIRED FEATURE)
+- [ ] Project 7 (REQUIRED FEATURE)
+- [ ] Any time after
+***/
+
+.rsvp-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width : 100%;
+  padding-bottom :50px;
+}
+
+/* Add other rsvp-related selectors here */
+.rsvp-para {
+  width: 55%;
+  padding-right: 10px;
+}
+
+.rsvp-participants {
+  width: 45%;
+  padding-right: 10px;
+}
+
+.error {
+  border-style: solid;
+  border-width: 2px;
+  background: lightpink;
+  border-color: red;
+}
+
+/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
+/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] 
+  Purpose:
+  - Add style rules to your website's pop-up modal, which appears
+    when a user successfully submits the RSVP form
+      When To Modify:
+  - [ ] Project 9 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;      
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+    padding: 40px;
+    width: 55%;
+    background-color: #fde2e4;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-family: Tahoma;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-item img{
+  width: 120px;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+#close-modal-button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: #4B2E83;
+  color: white;
+  cursor: pointer;
+}
+
+#close-modal-button:hover {
+  background-color: #321C52;
+}
+
+body.dark-mode .modal-container {
+  background-color: #a0345e;
+  color: white;
+  font-weight: bold;
+}
+
+body.dark-mode #close-modal-button {
+  background-color: #ffd1e3;
+  color: #4b2e4d;
+}
+
+body.dark-mode #close-modal-button:hover {
+  background-color: #fba0c6;
+}
+
+
+/*** Dark Mode [PLACEHOLDER] [ADDED IN UNIT 5] ***/
+/* Default dark mode style */
+.dark-mode {
+  background-color: #3D1E68;
+  color: white;
+}
+
+/* Example: Different dark mode style for h1 */
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode .event-item h3 {
+  color: white;
+}
+
+.dark-mode h1 {
+  background-color: #321C52;
+}
+
+.dark-mode p, .dark-mode .event-item p {
+  color: #BFB4C8;
+}
+
+/* Example: Different dark mode style for visited links */
+.dark-mode a {
+  color: lavender;
+}
+
+.dark-mode a:visited {
+  color: darkmagenta;
+}
+
+.dark-mode button {
+  background-color: #087F8C;
+  color: white;
+}
+
+.dark-mode .header-container {
+  background-color: #904C77;
+  color: white;           
+}
+
+.dark-mode ul li {
+  color: #BFB4C8;
+}
+
+.dark-mode .event-item{
+  background-color: #684A8E;
+}
+
+.dark-mode ul #theme-button {
+  color: white;
+  background-color: #333333;
+  border: 2px solid black;
+}
+
+/*** Custom Colors (OPTIONAL) ***
+  
+  Purpose:
+  - Use CSS variables to define custom colors for your website
+  - To get you started, we've provided the color scheme used in our example site.
+  - To reference a color variable in your css, use var(--variable-name) in place of a color value
+
+  When To Modify:
+  - [ ] Any time (OPTIONAL)
+***/
+
+:root {
+    /* Light Mode */
+    --bg-color: #a6a0cf;
+    --text-color: #231942;
+
+    /* Dark Mode */
+    --bg-color-dark-mode: #3e3377;
+    --text-color-dark-mode: #fff;
+
+    /* Accent Colors */
+    --accent-color-light: #d2cff5;
+    --accent-color-medium: #684fb5;
+    --accent-color-dark: #482f95;
+    --accent-color-darkest: #231942;
+    --accent-color-green: #28eb76;
+
+    /* Error Colors */
+    --error-color: #f8bbd0;
+    --error-color-border: #e63946;
+}
+
+.description{
+  font-size: 12px;
+  text-decoration: underline;
+  color:blue;
+  line-height: none;
+  padding: 5px;
+}
+
+.event-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.event-item {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  box-sizing: border-box;
+  background-color: lavender;
+  border-radius: 5px;
+}
+
+.event-item img {
+  align-items: center;
+  width: 80%; 
+  height: 60%; 
+  padding-top: 10px;
+  border-radius: 50%;
+}
+
+.event-item h3 {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #482f95;
+}
+
+.event-item p {
+  font-size: 12px;
+  margin-top: 5px;
+  color: black;
+}
+

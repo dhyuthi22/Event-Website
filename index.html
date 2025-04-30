@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <!-- head
+
+        Purpose:
+        - Title used here shows up in the browser tab
+        - Link to the favicon (small image that appears in the browser tab)
+        - Link to the CSS file (used to style the webpage)
+
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 2 (STRETCH FEATURE) (favicon)
+        - [ ] Any time after
+        -->
+        <title>Wedding Website</title>
+        <link rel="icon" href="\VSCode Edu\img\icon.ico">
+    </head>
+    
+    <body>       
+    
+        <!-- navbar [PLACEHOLDER] [ADDED IN UNIT 4] -->
+        <div class="navbar">
+            <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#schedule">Events</a></li>
+            <li><a href="#links">Helpful Links</a></li>
+            <button id="theme-button">Toggle Dark Mode</button>
+            </ul>
+        </div> 
+
+        <!-- headings
+
+        Purpose:
+        - Main header section of the webpage
+        - Contains the title, subtitle, image, and key buttons for the webpage
+
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 3 (REQUIRED FEATURE) 
+        - [ ] Project 4 (REQUIRED FEATURE) 
+        - [ ] Any time after
+        -->
+
+        <header id = "home" class="header-container">
+            <div class="header-item">
+                <img id="header-img" src="img\icon.ico"  alt="Logo"/>
+            </div>
+            <div class = "header-item">
+                <h1>Love Is In The Air</h1>
+                <h2>Love, Laughter, Forever</h2>
+                <button type="button" class="header-button">📝Signup</button>
+                <button type="button" class="header-button">📅View Event Schedule</button>
+            </div>
+        </header>
+
+        
+        <!-- about
+
+        Purpose:
+        - Section for general info about the event
+        - Contains a video, description, and key points about the event
+
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 2 (STRETCH FEATURE) 
+        - [ ] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after
+        --> 
+        <h2 id="about">About the Event</h2>
+        <iframe src="https://www.youtube.com/embed/RQorrnJIc2Q?si=vJNMV3sCoZ57Teun" 
+        title="YouTube video player" 
+        style="border: none;" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+        </iframe>
+        <p>
+            Welcome to your go-to destination for all the details about the upcoming wedding!
+            This site is designed with you, our valued guests, in mind. 
+            Here, you’ll find everything you need to prepare for the celebration, including the event schedule, venue information, travel tips, accommodation suggestions, and more.
+            Don’t forget to RSVP right here on the website and check back for updates as the date approaches. We can’t wait to celebrate together and make unforgettable memories!
+        </p>
+
+        <h3>What to Expect</h3>
+        <h4> 💖Love, Laughter & Lifelong Memories💖</h4>
+        <ul>
+            <li> <b>A Beautiful Celebration:</b> <i>Experience a day filled with joy, heartfelt moments, and unforgettable memories as we celebrate love.</i></li>
+            <li> <b>Delicious Food & Drinks:</b> <i>Indulge in a delightful selection of dishes, desserts, and refreshing beverages curated for a perfect wedding feast.</i></li>
+            <li> <b>Music & Dancing:</b> <i>Get ready to hit the dance floor with live music and a DJ playing your favorite tunes all night long!</i></li>
+        </ul>
+
+        <!-- schedule
+
+        Purpose:
+        - Section for specific info about the event's schedule
+        - Contains images and descriptions of each activity
+
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after
+        --> 
+        <h2 id="schedule">Event Schedule</h2>
+        <div class="event-container">
+            <div class = "event-item">
+                <img alt="" src="\VSCode Edu\img\2.jpg"/>
+            <h3>💍Engagement Ceremony</h3>
+            <p>A heartfelt gathering to celebrate the couple’s official commitment.</p>
+            </div>
+            <div class = "event-item">
+                <img alt="Image description" src="\VSCode Edu\img\1.jpg"/>
+                <h3>💒Wedding Ceremony</h3>
+                <p>The moment where the couple exchanges vows and begins their forever.</p>
+            </div>
+            <div class="event-item">
+                <img alt="Image description" src="\VSCode Edu\img\3.jpg"/>
+                <h3>🎉Reception Party</h3>
+                <p>An evening of dining, dancing, and celebrating love with family and friends.</p>
+            </div>
+        </div>
+        <!-- rsvp [PLACEHOLDER] [ADDED IN UNIT 6] -->
+        <!-- links
+
+        Purpose:
+        - Links to other resources related to the event
+
+        When To Modify:
+        - [ ] Project 2 (STRETCH FEATURE) 
+        - [ ] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after
+        --> 
+        <div id="rsvp">
+            <h2>RSVP</h2>
+            <div class="rsvp-container">
+                <div class="rsvp-para">
+                    <p>We are so excited to have you join us on our special day! Please let us know if you'll be able to attend by submitting your RSVP below. Your presence will make our celebration even more memorable!</p>
+                </div>
+                <div class="rsvp-participants">
+                    <ul style="list-style-type: none;">
+                        <li>🌹 Alice Johnson - Groom</li>
+                        <li>🌹 Michael Smith - Bride</li>
+                        <li>🌹 Sophia Davis - Bride</li>
+                    </ul>
+                      <p id="rsvp-count">🔔 3 guests are ready to celebrate with us!</p>
+                </div>
+            </div>
+        
+            <!--- Sign RSVP Form --->
+            <div class="form-container">
+                <form id="rsvp-form" title="rsvp-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email">
+                    <label for="side">Guest-Side</label>
+                    <input type="text" id="side" placeholder="Bride or Groom">
+                    <button type="submit" id="rsvp-button">Submit RSVP</button>
+                </form>
+            </div>      
+        </div>
+
+                <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] 
+        Purpose:
+        - Modal that appears when a user successfully signs up for the event
+        - Contains a personalized message and image
+
+        When To Modify:
+        - [ ] Project 9 (REQUIRED FEATURE)
+        - [ ] Project 9 (STRETCH FEATURE) 
+        - [ ] Any time after -->
+
+        <div id="success-modal" class="modal">
+            <div class="modal-container">
+                <div class="modal-item">
+                    <p id="modal-text"></p>
+                </div>
+                <div class="modal-item">
+                    <img src="img\4.jpg" alt="Glass clinking" id="modal-image">
+                </div>
+                <button id="close-modal-button"> Close</button>
+            </div>
+        </div>
+
+        <h2 id="links">Tips & Guides</h2>
+        <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
+        <a class="block" href="https://www.codepath.org">
+            <article>
+                <h3><a href="https://www.fionakellyphotography.com/wedding-planning-tips-from-real-couples-how-to-stay-organised-and-stress-free/" target="_blank">Wedding Planning Tips</a></h3>
+                <p class="description">Explore essential tips and tricks to plan your perfect wedding day, from budgeting to finding vendors.</p>
+            </article>
+            <article>
+                <h3><a href="https://www.bridalguide.com/" target="_blank">The Ultimate Bridal Guide</a></h3>
+                <p class="description">A comprehensive guide for brides-to-be, covering everything from choosing the dress to preparing for the big day.</p>
+            </article>
+            <article>
+                <h3><a href="https://www.theknot.com" target="_blank">Your Wedding Planning Hub</a></h3>
+                <p class="description">The Knot provides everything you need to plan your wedding, from vendor recommendations to inspiration and timelines.</p>
+            </article>
+            <article>
+                <h3><a href="https://www.tripadvisor.com" target="_blank">Travel Tips</a></h3>
+                <p class="description">Discover reviews & recommendations for local hotels, restaurants, and attractions</p>
+            </article>
+        </a>
+            
+        <!-- footer [PLACEHOLDER] [ADDED IN UNIT 3] -->
+         <!-- Footer Section -->
+        <div class="footer">
+            <a href="/contact-us" target="_blank">Contact us |</a>
+            <a href="/privacy-policy" target="_blank">Privacy policy</a>
+        </div>
+        <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
+        <script src="index.js"></script>
+    </body>
+</html>
