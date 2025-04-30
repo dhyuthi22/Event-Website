@@ -5,13 +5,12 @@ This projectis a wedding website which is a simple, static personal website buil
 
 ## Project Structure
 
-Event-Website/
-├── index.html         # Main homepage
-├── contact.html       # Contact page
-├── styles.css         # Stylesheet for layout and design
-├── index.js           # JavaScript for interactive behavior
-├── README.md          # Project documentation (this file)
-└── .git/              # Git version control metadata
+Event-Website
+- index.html         # Main homepage
+- contact.html       # Contact page
+- styles.css         # Stylesheet for layout and design
+- index.js           # JavaScript for interactive behavior
+- README.md
 
 
 ## Features
